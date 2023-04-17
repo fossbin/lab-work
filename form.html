@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+			
+		}
+		
+		input[type="text"], textarea, select {
+			width: 200px;
+			padding: 5px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		
+		.error {
+			color: red;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Form Validation Example</h1>
+	
+	<form id="myForm">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name">
+		<span class="error" id="nameError"></span>
+		
+		<label>Gender:</label>
+		<input type="radio" id="male" name="gender" value="male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label>
+		<span class="error" id="genderError"></span>
+		
+		<label>Interests:</label>
+		<input type="checkbox" id="interest1" name="interests[]" value="interest1">
+		<label for="interest1">Interest 1</label>
+		<input type="checkbox" id="interest2" name="interests[]" value="interest2">
+		<label for="interest2">Interest 2</label>
+		<input type="checkbox" id="interest3" name="interests[]" value="interest3">
+		<label for="interest3">Interest 3</label>
+		<span class="error" id="interestsError"></span>
+		
+		<label for="country">Country:</label>
+		<select id="country" name="country">
+			<option value="">Select a country</option>
+			<option value="usa">USA</option>
+			<option value="canada">Canada</option>
+			<option value="uk">UK</option>
+		</select>
+		<span class="error" id="countryError"></span>
+		
+		<label for="message">Message:</label>
+		<textarea id="message" name="message"></textarea>
+		<span class="error" id="messageError"></span>
+		
+		<input type="submit" value="Submit">
+	</form>
+	
+	<script src="form-validation.js"></script>
+</body>
+</html>
