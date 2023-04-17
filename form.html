@@ -7,7 +7,7 @@
 			display: block;
 			margin-bottom: 5px;
 			font-weight: bold;
-			
+
 		}
 		
 		input[type="text"], textarea, select {
@@ -78,6 +78,48 @@
 		<input type="submit" value="Submit">
 	</form>
 	
-	<script src="form-validation.js"></script>
+	<script>
+		function validateForm() {
+  // Get form elements
+  var name = document.forms["myForm"]["name"].value;
+  var email = document.forms["myForm"]["email"].value;
+  var password = document.forms["myForm"]["password"].value;
+  var confirmPassword = document.forms["myForm"]["confirmPassword"].value;
+  var gender = document.forms["myForm"]["gender"].value;
+
+  // Validate name field
+  if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+
+  // Validate email field
+  if (email == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+
+  // Validate password fields
+  if (password == "" || confirmPassword == "") {
+    alert("Password fields must be filled out");
+    return false;
+  }
+
+  if (password != confirmPassword) {
+    alert("Passwords do not match");
+    return false;
+  }
+
+  // Validate gender field
+  if (gender == "") {
+    alert("Gender must be selected");
+    return false;
+  }
+
+  // If all fields are valid, submit form
+  return true;
+}
+
+	</script>
 </body>
 </html>
